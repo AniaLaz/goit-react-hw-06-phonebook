@@ -17,7 +17,7 @@ const Contacts = () => {
 
   // const getStartContacts = () => {
   //   const saveStayt = localStorage.getItem('contacts');
-  //   if (saveStayt=== null) {
+  //   if (saveStayt !== null) {
   //     return saveStayt;
   //   }
   //   return [];
@@ -27,7 +27,7 @@ const Contacts = () => {
   // console.log('start Value', startValue);
 
   // 8888888888888
-  localStorage.setItem('contacts', JSON.stringify(contacts));
+  localStorage.setItem('contactsStart', JSON.stringify(contacts));
   // 8888888888888
 
   return (
