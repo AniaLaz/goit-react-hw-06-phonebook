@@ -16,6 +16,7 @@ export const App = () => {
   //   }
   //   return [];
   // };
+
   // const startValue = JSON.parse(getStartContacts());
   // const dispatch = useDispatch();
 

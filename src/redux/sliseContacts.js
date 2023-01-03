@@ -1,10 +1,17 @@
 import { createSlice } from '@reduxjs/toolkit';
-
+  const getStartContacts = () => {
+    const saveStayt = localStorage.getItem('contactsStart');
+    if (saveStayt !== null) {
+      return saveStayt;
+    }
+    return [];
+  };
+  const startValue = JSON.parse(getStartContacts());
 
 const contactsSlice = createSlice({
   name: 'contacts',
   initialState: {
-    contactsArr: [],
+    contactsArr: startValue,
   },
   reducers: {
     addFromLocalStorage(state, action) {

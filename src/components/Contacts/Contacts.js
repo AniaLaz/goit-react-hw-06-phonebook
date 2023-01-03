@@ -12,20 +12,6 @@ const Contacts = () => {
        return state.filter;
   });
 
-  // const test = localStorage.getItem('contacts');
-  // console.log('test', test);
-
-  // const getStartContacts = () => {
-  //   const saveStayt = localStorage.getItem('contacts');
-  //   if (saveStayt !== null) {
-  //     return saveStayt;
-  //   }
-  //   return [];
-  // };
-
-  // const startValue = getStartContacts();
-  // console.log('start Value', startValue);
-
   // 8888888888888
   localStorage.setItem('contactsStart', JSON.stringify(contacts));
   // 8888888888888
