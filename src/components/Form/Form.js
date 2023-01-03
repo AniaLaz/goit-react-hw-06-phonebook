@@ -8,8 +8,6 @@ const Form = () => {
   const dispatch = useDispatch();
 
   const contacts = useSelector(state => state.contacts.contactsArr);
-  console.log('contacts Form', contacts);
-
 
   const handleSubmit = event => {
     event.preventDefault();
