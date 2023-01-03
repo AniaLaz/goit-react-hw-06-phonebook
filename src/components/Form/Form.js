@@ -1,34 +1,38 @@
-// Импортируем хук
-import { useDispatch } from 'react-redux';
-// Импортируем генератор экшена
-import { addTask } from '../../redux/actions';
+import { useDispatch, useSelector } from 'react-redux';
+import { addContacts } from '../../redux/sliseContacts';
+import { nanoid } from 'nanoid';
 import css from 'components/Form/Form.module.css';
 
 const Form = () => {
   // Получаем ссылку на функцию отправки экшенов
   const dispatch = useDispatch();
 
+  const contacts = useSelector(state => state.contacts.contactsArr);
+  console.log('contacts Form', contacts);
+
+
   const handleSubmit = event => {
     event.preventDefault();
+    
     const name = event.target;
     const number = event.target;
     const contact = {
-      name:name.elements.name.value,
-      number:number.elements.number.value,
+      name: name.elements.name.value,
+      number: number.elements.number.value,
+      id: nanoid()
     };
-    console.log(name.elements.name.value);
-    console.log(number.elements.number.value);
-    console.log(contact);
+    if (
+      contacts.length > 0 &&
+      contacts.find(item => item.name === contact.name)
+    ) {
+      alert('Такий контакт вже є');
+      event.target.reset();
+      return;
+    }
 
-    // Вызываем генератор экшена и передаем текст задачи для поля payload
-    // Отправляем результат - экшен создания задачи
-    dispatch(addTask(contact));
+      dispatch(addContacts(contact));
+    //очищаем поля ввода
     event.target.reset();
-
-
-    // onSubmit(name.value, number.value);
-    // name.value = '';
-    // number.value = '';
   };
   return (
     <form onSubmit={handleSubmit} className={css.form}>
