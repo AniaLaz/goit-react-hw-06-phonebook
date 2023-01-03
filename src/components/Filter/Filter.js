@@ -1,5 +1,4 @@
 import { useDispatch } from 'react-redux';
-import { useSelector } from 'react-redux';
 import css from 'components/Filter/filtr.module.css';
 import { addFilter } from '../../redux/sliseFilter';
 
