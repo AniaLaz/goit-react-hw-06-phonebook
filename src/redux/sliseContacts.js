@@ -1,10 +1,10 @@
 import { createSlice } from '@reduxjs/toolkit';
-import {startValue} from '../components/App/App'
+// import {startValue} from '../components/App/App'
 
 const contactsSlice = createSlice({
   name: 'contacts',
   initialState: {
-    contactsArr: startValue,
+    contactsArr: [],
   },
   reducers: {
     addFromLocalStorage(state, action) {

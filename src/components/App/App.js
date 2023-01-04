@@ -7,14 +7,14 @@ import Filter from '../Filter/Filter';
 import css from '../App/App.module.css';
 // import { addFromLocalStorage } from '../../redux/sliseContacts';
 
-  export const getStartContacts = () => {
-    const saveStayt = localStorage.getItem('contactsStart');
-    if (saveStayt !== null) {
-      return saveStayt;
-    }
-    return [];
-  };
- export const startValue = JSON.parse(getStartContacts());
+//   export const getStartContacts = () => {
+//     const saveStayt = localStorage.getItem('contactsStart');
+//     if (saveStayt !== null) {
+//       return saveStayt;
+//     }
+//     return [];
+//   };
+//  export const startValue = JSON.parse(getStartContacts());
 
 export const App = () => {
   const contacts = useSelector(state => state.contacts.contactsArr);
