@@ -1,12 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-  const getStartContacts = () => {
-    const saveStayt = localStorage.getItem('contactsStart');
-    if (saveStayt !== null) {
-      return saveStayt;
-    }
-    return [];
-  };
-  const startValue = JSON.parse(getStartContacts());
+import {startValue} from '../components/App/App'
 
 const contactsSlice = createSlice({
   name: 'contacts',
